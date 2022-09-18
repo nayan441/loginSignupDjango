@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        #container{
+            height: 450px;
+            width: 700px;
+            background-color: rgb(145, 210, 210);
+            padding: 20px 40px 20px 40px;
+            text-align: justify;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+        }
+        #container2{
+            height: 200px;
+            width: 500px;
+            
+            padding: 20px 40px 20px 40px;
+            text-align: justify;
+            margin: auto;
+            margin-top: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+        input{
+            border: none;
+            height: 20px;
+            width: 100%;
+            padding: 5px;
+            outline: none;
+            border-radius: 10px;
+        }
+
+        #container3{
+            margin: auto;
+            text-align: center;
+            
+        }
+        button:hover{
+            background-color:  rgb(83, 249, 194);
+        }
+        textarea:focus, input:focus{
+        outline: none;
+        background-color:  rgb(83, 249, 194);
+        }
+        input:hover{
+            background-color: rgb(83, 249, 194);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <h1 style="text-align: center ;   text-shadow: 1px 1px;"> Registration Page</h1>
+        <div id="container2">
+            
+    <form action="signup" method="post">
+        {% csrf_token %}
+            <p>
+                <input type="text" placeholder="enter user name" name="username">
+            </p>
+            <p>
+                <input type="text" placeholder="enter first name" name="first_name">
+            </p>
+            <p>
+                <input type="text" placeholder="enter last name" name="last_name">
+            </p>
+            <p>
+                <input type="email" placeholder="enter last name" name="email">
+            </p>
+            <p>
+                <input type="password" placeholder="enter password" name="password1">
+            </p>
+            <p>
+                <input type="password" placeholder="enter password again" name="password2">
+            </p>
+            <p id="container3">
+                <button type="submit" style="width:100px; border: none; padding: 5px; border-radius:5px;">Register</button>
+            </p>
+            
+        </div>
+    </form>
+</div>
+</div>
+<div style="margin-top: 30px; text-align: center;">
+    <a href="{% url 'index' %}"> Go to home... </a>
+</body>
+</html>

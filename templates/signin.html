@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        #container{
+            height: 300px;
+            width: 700px;
+            background-color: rgb(145, 210, 210);
+            padding: 20px 40px 20px 40px;
+            text-align: justify;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+
+        }
+        #container2{
+            height: 200px;
+            width: 500px;
+            
+            padding: 20px 40px 20px 40px;
+            text-align: justify;
+            margin: auto;
+            margin-top: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+        input{
+            cursor: pointer;
+            border: none;
+            height: 20px;
+            width: 100%;
+            padding: 5px;
+            outline: none;
+            border-radius: 10px;
+        }
+
+        #container3{
+           
+            margin: auto;
+            text-align: center;
+            
+        }
+        button{
+            cursor: pointer;
+        }
+        button:hover{
+            background-color:  rgb(83, 249, 194);
+        }
+        input:focus{
+        outline: none;
+        background-color:  rgb(83, 249, 194);
+        }
+        input:hover{
+            background-color: rgb(83, 249, 194);
+        }
+    </style>
+</head>
+<body>
+    
+    {% for message in messages%}
+    <div>
+    <strong>Message::</strong>{{message}}
+    </div>
+    {%endfor%}
+    <div id="container">
+
+        <h1 style="text-align: center ;   text-shadow: 1px 1px;"> Login Page</h1>
+
+        <div id="container2">
+            <form action="signin" method="POST">
+                {% csrf_token %}
+            <p>
+                <!-- onchange -->
+                <input type="text" onkeyup="baba(event)" placeholder="enter user name" name="username">
+            </p>
+            <p>
+                <input type="password" placeholder="enter password" name="password1">
+            </p>
+            <p id="container3">
+                <button type="submit" style="width:100px; border: none; padding: 5px; border-radius:5px;"> Submit</button>
+            </p>
+        </form>
+        </div>
+    </div>
+    <div style="margin-top: 30px; text-align: center; ">
+        <a href="{% url 'index' %}"> Go to home... </a>
+
+    </div>
+    <script>
+        var x = document.getElementsByTagName('INPUT').onclick=
+        function(){
+        console.log("dfjgdjhlghjlds")
+        }
+        function baba(event){
+           console.log(event.target.value)
+        }
+    </script>
+</body>
+</html>

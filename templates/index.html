@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1 style="text-align: center ; color:aquamarine;"> Hello World</H1>
+
+    {% for message in messages%}
+    <div>
+    <strong>Message::</strong>{{message}}
+    </div>
+    {%endfor%}
+
+    {% if user.is_authenticated %}
+    <p>Hello <br> {{firstname}}  {{lastname}}</p>
+    <p>Authentication  successful</p>
+    
+    <button type="submit"><a href="signout"> click here to signout</a></button>
+    {% else %}
+    <button type="submit"> <a href="signup" >signup </a></button>
+    <button type="submit" > <a href="signin"> signin </a></button>
+    
+    {% endif %}
+</body>
+</html>
